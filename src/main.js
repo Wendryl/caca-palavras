@@ -1,6 +1,10 @@
-import { createBubbles, isInside, fetchRandomWord, fetchRandomWords } from './utils.js';
+import { createBubbles, isInside, fetchRandomWord, fetchRandomWords, dropHandler, dragoverHandler, dragstartHandler } from './utils.js';
 import { Bubble } from './Bubble.js';
 import { Timer } from './Timer.js';
+
+window.dropHandler = dropHandler;
+window.dragoverHandler = dragoverHandler;
+window.dragstartHandler = dragstartHandler;
 
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
@@ -20,11 +24,14 @@ window.onload = async () => {
     canvas.remove();
 
     const wordListWrapper = document.querySelector("#word-list");
-    const wordList = document.querySelector("#word-list ol");
+    const wordList = document.querySelector("#word-list ul");
     wordListWrapper.style.display = "block";
 
     capturedWords.map(w => {
       const word = document.createElement("li");
+      word.setAttribute("id", word);
+      word.setAttribute("draggable", true);
+      word.setAttribute("ondragstart", "dragstartHandler(event)");
       word.innerText = w;
       wordList.appendChild(word);
     });

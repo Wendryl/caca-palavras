@@ -24,8 +24,21 @@
     <canvas></canvas>
     <div id="word-list">
       <h4>Palavras capturadas:</h4>
-      <ol>
-      </ol>
+      <ul>
+      </ul>
+      <h4>Agora, categorize-as:</h4>
+      <h5>Verbos:</h5>
+      <ul id="target1" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+        <small>Arraste aqui</small>
+      </ul>
+      <h5>Adjetivos:</h5>
+      <ul id="target2" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+        <small>Arraste aqui</small>
+      </ul>
+      <h5>Substantivos:</h5>
+      <ul id="target3" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+        <small>Arraste aqui</small>
+      </ul>
     </div>
     <script src="./src/main.js" type="module"></script>
   </body>
