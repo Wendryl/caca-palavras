@@ -31,6 +31,7 @@ export class Bubble {
     ctx.stroke();
 
     ctx.strokeText(this.word, this.x, this.y);
+    ctx.textRendering = "optimizeLegibility";
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
   }

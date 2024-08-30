@@ -3,7 +3,7 @@ export class Timer {
    * @param {number} amount
    */
   constructor() {
-    this.amount = 5;
+    this.amount = 30;
     this.elementRef = document.querySelector('#timer');
     this.elementRef.innerHTML = this.amount;
     this.init();
